@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy Image to Public Amazon ECR
+name: Deploy Image to Amazon Public ECR
 
 # Controls when the workflow will run
 on:
