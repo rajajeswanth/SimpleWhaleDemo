@@ -90,4 +90,4 @@ jobs:
       
     # Terraform apply
     - name: Terraform Apply
-      run: terraform apply
+      run: terraform apply -auto-approve
