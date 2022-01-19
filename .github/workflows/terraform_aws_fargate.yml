@@ -3,7 +3,7 @@ name: 'Terraform Amazon ECS Fargate'
 on:
   workflow_dispatch:
     inputs:
-      name:
+      action:
         type: choice
         description: Select Action
         options: 
@@ -53,4 +53,10 @@ jobs:
       
     # Terraform apply
     - name: Terraform Apply
+      if: inputs.action == 'create'
       run: terraform -chdir=./terraform/aws-fargate/ apply -auto-approve
+
+    # Terraform destroy
+    - name: Terraform Destroy
+      if: inputs.action == 'destroy'
+      run: terraform -chdir=./terraform/aws-fargate/ destroy -auto-approve
